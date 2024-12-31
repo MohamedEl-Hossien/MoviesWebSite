@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movies Land</title>
+    <link rel="stylesheet" href="CSS/font-awesome.min.css" />
+    <link rel="stylesheet" href="CSS/normalize.css" />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    />
+  </head>
+  <body>
+    <!-- Start Settings Box -->
+    <div class="settings-box">
+      <div class="toggle-settings">
+        <i class="fa fa-gear fa-lg"></i>
+      </div>
+      <div class="settings-container">
+        <div class="option-list">
+          <h4>Colors</h4>
+          <ul class="colors-list">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+        <div class="option-list">
+          <h4>Background</h4>
+          <div class="background-options option-box">
+            <span class="random active">Random</span>
+            <span class="fixed">Fixed</span>
+          </div>
+        </div>
+        <div class="option-list">
+          <h4>Bullets List</h4>
+          <div class="bullets-options option-box">
+            <span class="show active">Show</span>
+            <span class="hide">Hide</span>
+          </div>
+        </div>
+        <button class="reset-button">Reset</button>
+      </div>
+    </div>
+    <!-- End Settings Box -->
+
+    <!-- Start Nav Bullets -->
+    <div class="nav-bullets">
+      <div class="bullet" data-section=".about-us">
+        <div class="tool-tip">About Us</div>
+      </div>
+      <div class="bullet" data-section=".movies-section">
+        <div class="tool-tip">Movies</div>
+      </div>
+      <div class="bullet" data-section=".testimonials">
+        <div class="tool-tip">Testimonials</div>
+      </div>
+      <div class="bullet" data-section=".contact-us">
+        <div class="tool-tip">Contacts</div>
+      </div>
+    </div>
+    <!-- End Nav Bullets -->
+
+    <!-- Start Landing Page -->
+    <div class="landing-page">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="header-area">
+          <div class="logo">Movies Land</div>
+          <div class="links-container">
+            <ul class="links">
+              <li>
+                <a href="#" data-section=".about-us">About</a>
+              </li>
+              <li><a href="#" data-section=".movies-section">Movies</a></li>
+              <li><a href="#" data-section=".testimonials">Testimonials</a></li>
+              <li><a href="#" data-section=".contact-us">Contacts</a></li>
+            </ul>
+          </div>
+          <button class="toggle-links">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="introduction-text">
+        <h1><span>Movies </span>Land</h1>
+        <p>The Fastest Web</p>
+        <i class="fa fa-rocket"></i>
+        <p>Site In Egypt</p>
+      </div>
+    </div>
+    <!-- End Landing Page -->
+    <hr />
+
+    <!-- Start About Page -->
+    <div class="container">
+      <div class="about-us">
+        <div class="info-box">
+          <h2>About Us</h2>
+          <p>
+            Welcome to Movies Land, your go-to source for everything movies! We
+            offer the latest reviews, news, and updates on everything from
+            blockbuster hits to indie gems. Join our community of film lovers
+            and stay connected to the world of cinema!
+          </p>
+        </div>
+        <div class="image-box">
+          <img src="Imgs/About-Us.png" alt="" />
+        </div>
+      </div>
+    </div>
+    <!-- End About Page -->
+    <hr />
+
+    <!-- Start Movies Page -->
+    <div class="container">
+      <div class="movies-section">
+        <div class="info-box">
+          <h2>Movies</h2>
+          <ul class="categories-list">
+            <li><span>Netflix</span></li>
+            <li><span>English</span></li>
+            <li><span>Asia</span></li>
+            <li><span>Animation</span></li>
+            <li><span>Turkish</span></li>
+            <li><span>Arabic</span></li>
+            <li><span>Classic</span></li>
+            <li><span>Indian</span></li>
+          </ul>
+        </div>
+        <div class="movies-slider">
+          <div class="arrows prev"></div>
+          <div class="movies-container">
+            <div class="movies-box"></div>
+          </div>
+          <div class="arrows next"></div>
+        </div>
+      </div>
+    </div>
+    <!-- End Movies Page -->
+    <hr />
+
+    <!-- Start Testimonials Page -->
+    <div class="container">
+      <div class="testimonials">
+        <h2>Testimonials</h2>
+        <div class="ts-box-container">
+          <div class="ts-box">
+            <p>
+              "A fantastic site for movie lovers! The reviews are spot-on, and I
+              always find something new to watch. Highly recommend!"
+            </p>
+            <div class="person-info">
+              <img src="Imgs/u2.jpg" alt="" />
+              <h4>Sarah Sayed</h4>
+              <p>Marketing Specialist</p>
+            </div>
+          </div>
+          <div class="ts-box">
+            <p>
+              "I rely on Movies Land for all my movie recommendations. The
+              updates are quick, and the reviews are insightful. A must-visit!"
+            </p>
+            <div class="person-info">
+              <img src="Imgs/u1.jpg" alt="" />
+              <h4>Ahmed Ali</h4>
+              <p>YouTuber</p>
+            </div>
+          </div>
+          <div class="ts-box">
+            <p>
+              "This site has become my go-to for movie news and reviews. Whether
+              it's the latest release or a hidden gem, they never disappoint!"
+            </p>
+            <div class="person-info">
+              <img src="Imgs/u3.jpg" alt="" />
+              <h4>Osama Fayez</h4>
+              <p>Engineer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- End Testimonials Page -->
+    <hr />
+
+    <!-- Start Contact Us Page -->
+
+    <div class="contact-us">
+      <div class="overlay"></div>
+      <div class="container">
+        <h2>Contact Us</h2>
+        <form action="">
+          <div class="left-form">
+            <input type="text" placeholder="Name" name="username" />
+            <input type="text" placeholder="Phone Number" name="phonenu,ber" />
+            <input type="email" placeholder="Email" name="mail" />
+            <input type="text" placeholder="Subject" name="subject" />
+          </div>
+          <div class="right-form">
+            <textarea name="message" placeholder="Your Message"></textarea>
+            <input type="submit" value="Send" />
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- End Contact Us Page -->
+    <hr />
+
+    <div class="footer">Created By Mohamed Elhossien</div>
+
+    <script src="JS/main.js"></script>
+  </body>
+</html>
