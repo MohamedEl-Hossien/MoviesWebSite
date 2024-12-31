@@ -202,7 +202,7 @@ for (let i = 0; i < moviesName.length; i++) {
   textContainer.classList.add("text-container");
   divMovie.appendChild(textContainer);
   divMovie.classList.add("movie");
-  divMovie.style.backgroundImage = `url(../Imgs/m${i}.jpg)`;
+  divMovie.style.backgroundImage = `url(Imgs/m${i}.jpg)`;
   moviesSection.appendChild(divMovie);
 }
 
