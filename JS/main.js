@@ -185,41 +185,37 @@ for (let i = 0; i < moviesName.length; i++) {
   textContainer.classList.add("text-container");
   divMovie.appendChild(textContainer);
   divMovie.classList.add("movie");
-  divMovie.style.backgroundImage = `url(Imgs/m${i}.jpg)`;
+  divMovie.style.backgroundImage = `url(../Imgs/m${i}.jpg)`;
   moviesSection.appendChild(divMovie);
 }
 
 let arrowLeft = document.querySelector(".prev");
 let arrowRight = document.querySelector(".next");
-let moviesPosition = 1;
-
-arrowRight.onclick = function () {
-  document.querySelector(".movies-box").scrollLeft +=
-    document.querySelector(".movie").offsetWidth + 16;
+const moviesBox = document.querySelector(".movies-box");
+arrowRight.onclick = () => {
+  moviesBox.scrollLeft += document.querySelector(".movie").offsetWidth + 17;
   arrowLeft.style.borderColor =
     document.documentElement.style.getPropertyValue("--main-color");
-};
-
-arrowLeft.onclick = function () {
-  document.querySelector(".movies-box").scrollLeft -=
-    document.querySelector(".movie").offsetWidth + 15;
-  arrowRight.style.borderColor =
-    document.documentElement.style.getPropertyValue("--main-color");
-};
-
-document.querySelector(".movies-box").onscroll = () => {
+  moviesBox.onscroll = () => {
     if (
-      document.querySelector(".movies-box").scrollLeft >=
-      document.querySelector(".movies-box").scrollWidth -
-        document.querySelector(".movies-box").clientWidth
+      Math.ceil(moviesBox.scrollLeft) >=
+      moviesBox.scrollWidth - moviesBox.clientWidth
     ) {
       arrowRight.style.borderColor = "#141414";
     }
+  };
+};
 
-   if (document.querySelector(".movies-box").scrollLeft === 0) {
+arrowLeft.onclick = function () {
+  moviesBox.scrollLeft -= document.querySelector(".movie").offsetWidth + 17;
+  arrowRight.style.borderColor =
+    document.documentElement.style.getPropertyValue("--main-color");
+  moviesBox.onscroll = () => {
+    if (moviesBox.scrollLeft === 0) {
       arrowLeft.style.borderColor = `#141414`;
     }
   };
+};
 
 document.addEventListener("click", (e) => {
   if (e.target.className === "movie") {
