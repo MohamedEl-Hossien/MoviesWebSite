@@ -189,8 +189,8 @@ for (let i = 0; i < moviesName.length; i++) {
   moviesSection.appendChild(divMovie);
 }
 
-let arrowLeft = document.querySelector(".prev");
 let arrowRight = document.querySelector(".next");
+let arrowLeft = document.querySelector(".prev");
 const moviesBox = document.querySelector(".movies-box");
 arrowRight.onclick = () => {
   moviesBox.scrollLeft += document.querySelector(".movie").offsetWidth + 17;
