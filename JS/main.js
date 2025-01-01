@@ -193,10 +193,8 @@ let arrowRight = document.querySelector(".next");
 let arrowLeft = document.querySelector(".prev");
 const moviesBox = document.querySelector(".movies-box");
 arrowRight.onclick = () => {
-  console.log(moviesBox.scrollLeft);
   moviesBox.scrollLeft += document.querySelector(".movie").offsetWidth + 17;
-  document.querySelector(".prev").style.borderColor =
-    document.documentElement.style.getPropertyValue("--main-color");
+  arrowLeft.style.borderColor = getComputedStyle(document.documentElement).getPropertyValue("--main-color");
   moviesBox.onscroll = () => {
     if (
       Math.ceil(moviesBox.scrollLeft) >=
@@ -208,10 +206,8 @@ arrowRight.onclick = () => {
 };
 
 arrowLeft.onclick = () => {
-    console.log(moviesBox.scrollLeft);
   moviesBox.scrollLeft -= document.querySelector(".movie").offsetWidth + 17;
-  document.querySelector(".next").style.borderColor =
-    document.documentElement.style.getPropertyValue("--main-color");
+  arrowRight.style.borderColor = getComputedStyle(document.documentElement).getPropertyValue("--main-color");
   moviesBox.onscroll = () => {
     if (moviesBox.scrollLeft === 0) {
       arrowLeft.style.borderColor = `#141414`;
