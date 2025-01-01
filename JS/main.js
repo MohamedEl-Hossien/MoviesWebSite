@@ -162,23 +162,6 @@ bulletsOptions.forEach((current) => {
   };
 });
 
-/* let aboutSection = document.querySelector(".about-us-section");
-window.onscroll = function () {
-  let aboutSectionOffsetTop = aboutSection.offsetTop;
-  //console.log(aboutSectionOffsetTop);
-  let aboutSectionOffsetHeight = aboutSection.offsetHeight;
-  //console.log(aboutSectionOffsetHeight);
-  let windowOffsetHeight = window.innerHeight;
-
-  let windowScrollTop = window.pageYOffset;
-  if (
-    windowScrollTop >
-    aboutSectionOffsetTop + aboutSectionOffsetHeight - windowOffsetHeight
-  ) {
-    console.log("Section Reached");
-  }
-}; */
-
 let moviesSection = document.querySelector(".movies-box");
 let moviesName = [
   "CHALLENGERS",
@@ -212,20 +195,9 @@ let moviesPosition = 1;
 
 arrowRight.onclick = function () {
   document.querySelector(".movies-box").scrollLeft +=
-    document.querySelector(".movie").offsetWidth + 15;
+    document.querySelector(".movie").offsetWidth + 16;
   arrowLeft.style.borderColor =
     document.documentElement.style.getPropertyValue("--main-color");
-
-  document.querySelector(".movies-box").onscroll = () => {
-    if (
-      document.querySelector(".movies-box").scrollLeft >=
-      document.querySelector(".movies-box").scrollWidth -
-        document.querySelector(".movies-box").clientWidth -
-        5
-    ) {
-      arrowRight.style.borderColor = "#141414";
-    }
-  };
 };
 
 arrowLeft.onclick = function () {
@@ -233,12 +205,21 @@ arrowLeft.onclick = function () {
     document.querySelector(".movie").offsetWidth + 15;
   arrowRight.style.borderColor =
     document.documentElement.style.getPropertyValue("--main-color");
-  document.querySelector(".movies-box").onscroll = () => {
-    if (document.querySelector(".movies-box").scrollLeft === 0) {
+};
+
+document.querySelector(".movies-box").onscroll = () => {
+    if (
+      document.querySelector(".movies-box").scrollLeft >=
+      document.querySelector(".movies-box").scrollWidth -
+        document.querySelector(".movies-box").clientWidth
+    ) {
+      arrowRight.style.borderColor = "#141414";
+    }
+
+   if (document.querySelector(".movies-box").scrollLeft === 0) {
       arrowLeft.style.borderColor = `#141414`;
     }
   };
-};
 
 document.addEventListener("click", (e) => {
   if (e.target.className === "movie") {
