@@ -193,6 +193,7 @@ let arrowRight = document.querySelector(".next");
 let arrowLeft = document.querySelector(".prev");
 const moviesBox = document.querySelector(".movies-box");
 arrowRight.onclick = () => {
+  console.log(moviesBox.scrollLeft);
   moviesBox.scrollLeft += document.querySelector(".movie").offsetWidth + 17;
   arrowLeft.style.borderColor =
     document.documentElement.style.getPropertyValue("--main-color");
@@ -206,7 +207,8 @@ arrowRight.onclick = () => {
   };
 };
 
-arrowLeft.onclick = function () {
+arrowLeft.onclick = () => {
+    console.log(moviesBox.scrollLeft);
   moviesBox.scrollLeft -= document.querySelector(".movie").offsetWidth + 17;
   arrowRight.style.borderColor =
     document.documentElement.style.getPropertyValue("--main-color");
