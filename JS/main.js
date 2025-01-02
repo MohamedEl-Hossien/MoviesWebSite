@@ -101,10 +101,12 @@ pageColor.forEach((color) => {
     });
     // Add Active Class On Target Color
     color.classList.add("active");
-    document.documentElement.style.setProperty(
-      "--main-color",
-      window.getComputedStyle(color).backgroundColor
-    );
+    document
+      .querySelector(":root")
+      .style.setProperty(
+        "--main-color",
+        window.getComputedStyle(color).backgroundColor
+      );
     localStorage.setItem(
       "pageColor",
       window.getComputedStyle(color).backgroundColor
@@ -162,14 +164,39 @@ bulletsOptions.forEach((current) => {
   };
 });
 
+/* let aboutSection = document.querySelector(".about-us-section");
+window.onscroll = function () {
+  let aboutSectionOffsetTop = aboutSection.offsetTop;
+  //console.log(aboutSectionOffsetTop);
+  let aboutSectionOffsetHeight = aboutSection.offsetHeight;
+  //console.log(aboutSectionOffsetHeight);
+  let windowOffsetHeight = window.innerHeight;
+
+  let windowScrollTop = window.pageYOffset;
+  if (
+    windowScrollTop >
+    aboutSectionOffsetTop + aboutSectionOffsetHeight - windowOffsetHeight
+  ) {
+    console.log("Section Reached");
+  }
+}; */
+
 let moviesSection = document.querySelector(".movies-box");
 let moviesName = [
   "CHALLENGERS",
   "ABOVE THE TREES",
-  "FANTASY",
+  "TITANIC",
   "L.I.F.E",
   "BORDERLANDS",
   "ABIGAIL",
+];
+let moviesContent = [
+  "Tashi, a former tennis prodigy turned coach, transformed her husband into a champion. But to overcome a recent losing streak and redeem himself, he'll need to face off against his former best friend and Tashi's ex-boyfriend",
+  "After a deadly assault in the northwest leaves a good man in a coma, a local boxer is charged. Ensemble follows a mosaic of people over two years who are inextricably linked to the crime as the criminal trial unfolds in Jackson County",
+  "A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic",
+  "A team of scientists aboard the International Space Station discover a rapidly evolving life form that caused extinction on Mars and now threatens all life on Earth",
+  "An infamous bounty hunter returns to her childhood home, the chaotic planet Pandora, and forms an unlikely alliance with a team of misfits to find the missing daughter of the most powerful man in the universe",
+  "After a group of criminals kidnap the ballerina daughter of a powerful underworld figure, they retreat to an isolated mansion, unaware that they're locked inside with no normal little girl",
 ];
 
 for (let i = 0; i < moviesName.length; i++) {
@@ -177,8 +204,7 @@ for (let i = 0; i < moviesName.length; i++) {
   let textContainer = document.createElement("div");
   let movieName = document.createElement("h3");
   let movieContent = document.createElement("p");
-  movieContent.innerHTML =
-    "Lorem ipsum, dolor sit amet consectetur adipisicing elit Consequuntur minima vitae quia accusamus, quod suscipit iure ad qui corrupti quibusdam.";
+  movieContent.innerHTML = moviesContent[i];
   movieName.innerHTML = moviesName[i];
   textContainer.appendChild(movieName);
   textContainer.appendChild(movieContent);
@@ -205,7 +231,7 @@ arrowRight.onclick = () => {
   };
 };
 
-arrowLeft.onclick = () => {
+arrowLeft.onclick = function () {
   moviesBox.scrollLeft -= document.querySelector(".movie").offsetWidth + 17;
   arrowRight.style.borderColor = `var(--main-color)`;
   moviesBox.onscroll = () => {
@@ -256,6 +282,19 @@ document.addEventListener("click", (e) => {
 
     // Append Image To PopUp Box
     popupBox.appendChild(popupImg);
+
+    // Create Content
+    let imgContent = document.createElement("p");
+
+    // Create Text For Content
+    let contentText = document.createTextNode(
+      e.target.children[0].children[1].innerHTML
+    );
+    // Append The Text To The Content
+    imgContent.appendChild(contentText);
+
+    // Append The Content To The PopUP Box
+    popupBox.appendChild(imgContent);
 
     // Create Close Button
     let closeButton = document.createElement("span");
@@ -347,4 +386,15 @@ settingsBox.onclick = function (e) {
     buttonList.classList.toggle("open");
     linksList.classList.toggle("open");
   }
+};
+
+window.onscroll = () => {
+  allBullets.forEach((bullet) => {
+    bullet.style.right = 0;
+  });
+  setTimeout(() => {
+    allBullets.forEach((bullet) => {
+      bullet.style.removeProperty("right");
+    });
+  }, 2000);
 };
