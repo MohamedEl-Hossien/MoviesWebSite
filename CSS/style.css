@@ -52,10 +52,10 @@ body {
       text-align: center;
       h4 {
         width: 100%;
-        font-size: 25px;
+        font-size: 20px;
         text-align: center;
         color: white;
-        margin-top: 0;
+        margin: 0 0 15px;
       }
       .colors-list {
         display: flex;
@@ -103,7 +103,7 @@ body {
           height: 40%;
           text-align: center;
           position: relative;
-          padding: 10px;
+          padding: 7px;
           cursor: pointer;
           border-radius: 5%;
           opacity: 0.3;
@@ -115,14 +115,14 @@ body {
       }
     }
     .reset-button {
-      background-color: rgb(100, 100, 100);
+      background-color: rgb(88, 0, 0);
       color: white;
-      font-weight: bold;
       width: 50%;
       border-radius: 5px;
+      font-weight: bold;
       position: relative;
       left: 25%;
-      padding: 10px;
+      padding: 7px;
       cursor: pointer;
       border: 3px solid white;
     }
@@ -136,6 +136,7 @@ body {
   margin: auto;
   position: relative;
   z-index: 9;
+  max-width: 1600px;
 }
 
 hr {
@@ -343,7 +344,7 @@ hr {
     width: 100%;
     text-align: center;
     img {
-      width: 50%;
+      width: 100%;
     }
   }
 }
@@ -445,6 +446,7 @@ hr {
             }
             p {
               color: white;
+              padding: 5px;
             }
             &:hover {
               top: 75%;
@@ -488,8 +490,7 @@ hr {
 .popup-box {
   position: fixed;
   background-color: white;
-  width: 400px;
-  height: 550px;
+  width: 300px;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -497,19 +498,27 @@ hr {
   border: 1px solid #ccc;
   h3 {
     margin: 0px;
-    padding: 15px 0 0;
+    padding: 15px 0;
     font-size: 20px;
-    font-weight: bold;
     color: var(--main-color);
     text-align: center;
     background-color: #141414;
     height: 10%;
   }
+  p {
+    text-align: center;
+    background-color: #141414;
+    color: white;
+    padding: 10px;
+    margin: 0;
+    height: 20%;
+  }
   img {
+    margin: 1px 0;
     width: 100%;
     max-width: 100%;
-    height: 90%;
-    max-height: 100%;
+    height: 400px;
+    display: block;
   }
   .close-button {
     width: 40px;
@@ -562,7 +571,7 @@ hr {
         margin: 0;
         font-size: 15px;
         font-style: italic;
-        color: #707070;
+        color: #141414;
       }
       .person-info {
         width: 100%;
@@ -582,7 +591,7 @@ hr {
         p {
           margin: 0 0 10px;
           font-size: 15px;
-          color: #707070;
+          color: #141414;
         }
       }
     }
@@ -700,11 +709,26 @@ hr {
   .movies-section {
     .movies-slider {
       .movies-container {
-        width: 250px;
+        width: 210px;
         .movies-box {
           .movie {
-            min-width: 220px;
-            height: 270px;
+            min-width: 180px;
+            height: 220px;
+            .text-container {
+              top: 92%;
+              h3 {
+                margin-top: 10px;
+                margin-bottom: 0px;
+                font-size: 12px;
+              }
+              p {
+                font-size: 9px;
+                margin: 0;
+              }
+              &:hover {
+                top: 75%;
+              }
+            }
           }
         }
       }
@@ -742,7 +766,7 @@ hr {
     }
     .image-box {
       img {
-        width: 60%;
+        width: 100%;
       }
     }
   }
@@ -786,10 +810,15 @@ hr {
 
   .popup-box {
     width: 200px;
-    height: 290px;
     h3 {
-      padding: 2px 0 0;
-      font-size: 20px;
+      padding: 5px 0;
+      font-size: 17px;
+    }
+    p {
+      font-size: 10px;
+    }
+    img {
+      height: 250px;
     }
     .close-button {
       width: 20px;
@@ -857,9 +886,9 @@ hr {
     }
   }
   .landing-page .introduction-text {
-    font-size: 19px;
+    font-size: 17px;
     h1 {
-      font-size: 50px;
+      font-size: 45px;
     }
   }
   .about-us {
@@ -868,7 +897,7 @@ hr {
         font-size: 30px;
       }
       p {
-        font-size: 12px;
+        font-size: 15px;
       }
     }
   }
@@ -899,6 +928,17 @@ hr {
 }
 
 @media only screen and (min-width: 992px) {
+  .about-us {
+    .info-box {
+      width: 100%;
+    }
+    .image-box {
+      width: 50%;
+      img {
+        width: 80%;
+      }
+    }
+  }
   .movies-section .movies-slider {
     .movies-container {
       width: 960px;
