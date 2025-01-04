@@ -241,6 +241,17 @@ arrowLeft.onclick = function () {
   };
 };
 
+setInterval(() => {
+  if (
+    Math.ceil(moviesBox.scrollLeft) <=
+    moviesBox.scrollWidth - moviesBox.clientWidth - 1
+  ) {
+    moviesBox.scrollLeft += document.querySelector(".movie").offsetWidth + 17;
+  } else {
+    moviesBox.scrollLeft = 0;
+  }
+}, 3000);
+
 document.addEventListener("click", (e) => {
   if (e.target.className === "movie") {
     // Create Overlay Element
@@ -337,8 +348,8 @@ function scrollToSection(elements) {
 scrollToSection(allBullets);
 scrollToSection(headerLinks);
 
-let reserButton = document.querySelector(".reset-button");
-reserButton.addEventListener("click", () => {
+let resetButton = document.querySelector(".reset-button");
+resetButton.addEventListener("click", () => {
   let localItemsToRemove = ["backgroundOption", "bulletOption", "pageColor"];
   localItemsToRemove.forEach((itemKey) => localStorage.removeItem(itemKey));
   location.reload();
@@ -398,3 +409,53 @@ window.onscroll = () => {
     });
   }, 2000);
 };
+
+// Select Submit button
+const form = document.querySelector(".form");
+const formResult = document.querySelector(`.form-result`);
+
+form.addEventListener("submit", function (e) {
+  if (!form.checkValidity()) {
+    e.preventDefault();
+    e.stopPropagation();
+    form.querySelectorAll(":invalid")[0].focus();
+  } else {
+    e.preventDefault();
+    e.stopPropagation();
+    const formData = new FormData(form);
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+    formResult.style.display = "block";
+    formResult.innerHTML = "Please wait...";
+
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: json,
+    })
+      .then(async (response) => {
+        let json = await response.json();
+        if (response.status == 200) {
+          formResult.innerHTML = json.message;
+        } else {
+          console.log(response);
+          formResult.innerHTML = json.message;
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        formResult.innerHTML = "Something went wrong!";
+      })
+      .then(function () {
+        form.reset();
+        form.classList.remove("was-validated");
+        setTimeout(() => {
+          formResult.style.display = "none";
+        }, 3000);
+      });
+  }
+  form.classList.add("was-validated");
+});
