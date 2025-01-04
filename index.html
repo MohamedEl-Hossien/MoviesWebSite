@@ -72,7 +72,7 @@
       <div class="overlay"></div>
       <div class="container">
         <div class="header-area">
-          <div class="logo">Movies Land</div>
+          <div class="logo"><i class="fa fa-rocket"></i> Movies Land</div>
           <div class="links-container">
             <ul class="links">
               <li>
@@ -93,9 +93,7 @@
 
       <div class="introduction-text">
         <h1><span>Movies </span>Land</h1>
-        <p>The Fastest</p>
-        <i class="fa fa-rocket"></i>
-        <p>Website In Egypt</p>
+        <p>The Fastest Website In Egypt</p>
       </div>
     </div>
     <!-- End Landing Page -->
@@ -200,18 +198,65 @@
       <div class="overlay"></div>
       <div class="container">
         <h2>Contact Us</h2>
-        <form action="">
+        <form class="form" action="" method="POST" novalidate>
+          <input
+            type="hidden"
+            name="access_key"
+            value="a2383b5e-3409-464b-9695-eb66a7e51b86"
+          />
+          <input type="hidden" name="from_name" value="MoviesLand" />
           <div class="left-form">
-            <input type="text" placeholder="Name" name="username" />
-            <input type="text" placeholder="Phone Number" name="phonenu,ber" />
-            <input type="email" placeholder="Email" name="mail" />
-            <input type="text" placeholder="Subject" name="subject" />
+            <div>
+              <input type="text" placeholder="Name" name="USERNAME" required />
+              <div class="empty-feedback invalid-feedback">
+                Please provide your name.
+              </div>
+            </div>
+            <div>
+              <input
+                type="text"
+                placeholder="Phone Number"
+                name="PHONE NUMBER"
+                required
+              />
+              <div class="empty-feedback invalid-feedback">
+                Please provide your phone number.
+              </div>
+            </div>
+            <div>
+              <input type="email" placeholder="Email" name="E-MAIL" required />
+              <div class="empty-feedback">
+                Please provide your email address.
+              </div>
+              <div class="invalid-feedback">
+                Please provide a valid email address.
+              </div>
+            </div>
+            <div>
+              <input
+                type="text"
+                placeholder="Subject"
+                name="E-MAIL SUBJECT"
+                required
+              />
+              <div class="empty-feedback">Please provide a subject.</div>
+            </div>
           </div>
           <div class="right-form">
-            <textarea name="message" placeholder="Your Message"></textarea>
+            <div>
+              <textarea
+                name="MESSAGE"
+                placeholder="Your Message"
+                required
+              ></textarea>
+              <div class="empty-feedback invalid-feedback">
+                Please enter your message.
+              </div>
+            </div>
             <input type="submit" value="Send" />
           </div>
         </form>
+        <div class="form-result"></div>
       </div>
     </div>
     <!-- End Contact Us Page -->
